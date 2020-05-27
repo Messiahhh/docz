@@ -1,0 +1,43 @@
+---
+name: Tabs
+menu: Components
+---
+
+import { Playground, Props } from 'docz'
+import { Tabs, TabPane } from './Tabs.tsx'
+
+# Tabs
+
+## Properties
+
+<Props of={Tabs} />
+
+## Basic usage
+
+<Playground>
+    <Tabs defaultActiveKey="1" onChange={(index) => {console.log(index)}}>
+        <TabPane label="Tab 1" index="1">Content of Tab Pane 1</TabPane>
+        <TabPane label="Tab 2" index="2">Content of Tab Pane 2</TabPane>
+        <TabPane label="Tab 3" index="3">Content of Tab Pane 3</TabPane>
+    </Tabs>
+</Playground>
+
+## 位置设置
+
+<Playground>
+    <Tabs tabPosition="left">
+        <TabPane label="Tab 1" index="1">Content of Tab Pane 1</TabPane>
+        <TabPane label="Tab 2" index="2">Content of Tab Pane 2</TabPane>
+        <TabPane label="Tab 3" index="3">Content of Tab Pane 3</TabPane>
+    </Tabs>
+</Playground>
+
+## 卡片样式
+
+<Playground>
+    <Tabs type="card">
+        <TabPane label="Tab 1" index="1">Content of Tab Pane 1</TabPane>
+        <TabPane label="Tab 2" index="2">Content of Tab Pane 2</TabPane>
+        <TabPane label="Tab 3" index="3">Content of Tab Pane 3</TabPane>
+    </Tabs>
+</Playground>
