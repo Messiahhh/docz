@@ -1,6 +1,6 @@
 export default {
   typescript: true,
-  base: '/docs/',
-  title: 'Docz Sass',
-  menu: ['Getting Started', 'Components'],
+  base: '/docz/',
+  title: '组件库',
+  menu: ['介绍', '组件'],
 }
