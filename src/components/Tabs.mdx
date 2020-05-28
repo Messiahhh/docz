@@ -6,23 +6,27 @@ menu: Components
 import { Playground, Props } from 'docz'
 import { Tabs, TabPane } from './Tabs.tsx'
 
-# Tabs
+# 标签页
 
-## Properties
+## Tab属性
 
 <Props of={Tabs} />
 
-## Basic usage
+## TabPane属性
+
+<Props of={TabPane} />
+
+## 基本用法
 
 <Playground>
-    <Tabs defaultActiveKey="1" onChange={(index) => {console.log(index)}}>
+    <Tabs defaultActiveIndex="1" onChange={(a, b) => {console.log(a, b)}} >
         <TabPane label="Tab 1" index="1">Content of Tab Pane 1</TabPane>
-        <TabPane label="Tab 2" index="2">Content of Tab Pane 2</TabPane>
+        <TabPane label="Tab 2" index="2" disabled>Content of Tab Pane 2</TabPane>
         <TabPane label="Tab 3" index="3">Content of Tab Pane 3</TabPane>
     </Tabs>
 </Playground>
 
-## 位置设置
+## 位置
 
 <Playground>
     <Tabs tabPosition="left">
@@ -35,7 +39,7 @@ import { Tabs, TabPane } from './Tabs.tsx'
 ## 卡片样式
 
 <Playground>
-    <Tabs type="card">
+    <Tabs type="card" defaultActiveIndex="1">
         <TabPane label="Tab 1" index="1">Content of Tab Pane 1</TabPane>
         <TabPane label="Tab 2" index="2">Content of Tab Pane 2</TabPane>
         <TabPane label="Tab 3" index="3">Content of Tab Pane 3</TabPane>

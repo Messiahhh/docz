@@ -1,5 +1,11 @@
+$color: rgba(0, 0, 0, 0.65);
+$color-disabled: rgba(0, 0, 0, .25);
+$color-hover: #40a9ff;
+$color-active: #1890ff;
+$color-shadow: #f0f0f0;
+
 .tabs {
-    color: rgba(0, 0, 0, 0.65);
+    color: $color;
     font-size: 14px;
     overflow: hidden;
     display: flex;
@@ -7,27 +13,65 @@
 }
 
 .tab-label-container {
-    $hoverCl: #40a9ff;
-    $activeCl: #1890ff;
     position: relative;
     display: flex;
     border: 0px solid #f0f0f0;
     border-width: 0 0 1px 0;
     margin-bottom: 16px;
-    
+    .tab-label-plus {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        
+        .tab-label-icon {
+            cursor: pointer;
+            border: 1px solid $color-shadow;
+            border-radius: 4px;
+            transition: all .3s;
+            svg {
+                display: block;
+                fill: $color;
+                transition: all .3s;
+            }
+
+            &:hover {
+                border-color: $color-active;
+
+                svg {
+                    fill: $color-active
+                }
+            }
+        }
+
+
+    }
     .tab-label {
         padding: 12px 0;
         margin-right: 32px;
         cursor: pointer;
         
-        &:hover {
-            color: $hoverCl;
+        &:not(.tab-label-disabled):hover {
+            color: $color-hover;
         }
+
+        &.tab-label-large {
+            padding: 16px 0;
+        }
+
+        &.tab-label-small {
+            padding: 8px 0;
+        }
+
         &.tab-label-active {
-            color: $activeCl;
+            color: $color-active;
             font-weight: 600;
-            border: 0px solid $activeCl;
+            border: 0px solid $color-active;
             border-width: 0 0 2px 0;
+        }
+
+        &.tab-label-disabled {
+            cursor: not-allowed;
+            color: $color-disabled;
         }
     }
     .tab-bar {
@@ -36,7 +80,7 @@
         bottom: 0;
         width: 30px;
         height: 2px;
-        background: $activeCl;
+        background: $color-active;
     }
 
     &.tab-label-container-left {
